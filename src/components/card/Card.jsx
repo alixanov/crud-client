@@ -15,7 +15,7 @@ const App = () => {
 
   // Эффект для получения данных продуктов из API
   useEffect(() => {
-    axios.get('https://crud-db-pink.vercel.app/api/getall')
+    axios.get('https://crud-backend-lilac.vercel.app/api/getall')
       .then(response => {
         setData(response.data);
       })
@@ -27,7 +27,7 @@ const App = () => {
   // Функция для удаления продукта
   const handleDelete = (id) => {
     setIsLoading(true); // Включаем загрузчик
-    axios.delete(`https://crud-db-pink.vercel.app/api/delete/${id}`)
+    axios.delete(`https://crud-backend-lilac.vercel.app/api/delete/${id}`)
       .then(res => {
         setIsLoading(false); // Отключаем загрузчик
         setDeleteState(prev => !prev); // Обновляем состояние для получения актуальных данных
@@ -51,7 +51,7 @@ const App = () => {
 
   // Функция для отправки обновленных данных продукта
   const handleUpdate = (updatedProduct) => {
-    axios.put(`https://crud-db-pink.vercel.app/api/update/${editProduct._id}`, updatedProduct)
+    axios.put(`https://crud-backend-lilac.vercel.app/api/update/${editProduct._id}`, updatedProduct)
       .then(response => {
         setOpen(false); // Закрываем модальное окно
         setDeleteState(prev => !prev); // Обновляем состояние для получения актуальных данных

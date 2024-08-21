@@ -21,7 +21,7 @@ const Add = ({ onClose }) => {
   });
 
   const addData = (data) => {
-    axios.post("https://crud-db-pink.vercel.app/api/add", data)
+    axios.post("https://crud-backend-lilac.vercel.app/api/add", data)
       .then(res => {
         notyf.success("Готово! Продукт теперь в каталоге.")
         onClose()
